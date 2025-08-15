@@ -472,6 +472,37 @@
         </div>
     </section>
 
+        <!-- Venue Booking Section -->
+        <section id="venue-booking" class="contact">
+            <div class="container">
+                <h2>Book a Venue</h2>
+                <form class="contact-form" onsubmit="submitVenueBooking(event)">
+                    <div class="form-group">
+                        <label for="venue">Select Venue</label>
+                        <select id="venue" name="venue" required>
+                            <option value="">Choose a venue</option>
+                            <option value="Central Park">Central Park</option>
+                            <option value="Community Center">Community Center</option>
+                            <option value="Bear Mountain">Bear Mountain</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="booking-date">Date</label>
+                        <input type="date" id="booking-date" name="booking-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="booking-time">Time</label>
+                        <input type="time" id="booking-time" name="booking-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="organizer">Organizer Name</label>
+                        <input type="text" id="organizer" name="organizer" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Book Venue</button>
+                </form>
+            </div>
+        </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -613,6 +644,21 @@
                 event.target.reset();
             }, 1000);
         }
+
+            // Venue booking form submission
+            function submitVenueBooking(event) {
+                event.preventDefault();
+                const venue = document.getElementById('venue').value;
+                const date = document.getElementById('booking-date').value;
+                const time = document.getElementById('booking-time').value;
+                const organizer = document.getElementById('organizer').value;
+
+                // Simulate booking logic
+                setTimeout(() => {
+                    alert(`Venue booked!\nVenue: ${venue}\nDate: ${date}\nTime: ${time}\nOrganizer: ${organizer}`);
+                    event.target.reset();
+                }, 1000);
+            }
 
         function rsvpEvent(eventId) {
             // Simulate RSVP functionality
