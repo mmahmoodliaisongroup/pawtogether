@@ -197,6 +197,73 @@
             font-weight: bold;
         }
 
+        /* Venues Section */
+        .venues {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .venues h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .venues-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .venue-card {
+            background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .venue-image {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .venue-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .venue-card p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .venue-details {
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .venue-details p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .venue-details p:last-child {
+            margin-bottom: 0;
+        }
+
         /* Contact Section */
         .contact {
             padding: 80px 0;
@@ -339,6 +406,35 @@
         .close:hover {
             color: #333;
         }
+
+        .venue-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .venue-info h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .venue-info p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .venue-info .price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -352,6 +448,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#events">Events</a></li>
+                <li><a href="#venues">Venues</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="cta-btn" onclick="openSignupModal()">Join Now</button>
@@ -366,6 +463,7 @@
             <div class="hero-cta">
                 <button class="cta-btn" onclick="openSignupModal()">Find Meetups</button>
                 <button class="cta-btn" onclick="scrollToSection('events')">Browse Events</button>
+                <button class="cta-btn" onclick="scrollToSection('venues')">Book Venues</button>
             </div>
         </div>
     </section>
@@ -405,6 +503,11 @@
                     <h3>Personalized Matches</h3>
                     <p>Our smart algorithm suggests events and connections based on your pet's breed, size, and your interests.</p>
                 </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Venue Booking</h3>
+                    <p>Book pet-friendly venues for your own events and meetups. Choose from parks, community centers, and specialized facilities.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -434,6 +537,49 @@
                     <p>Explore scenic trails with your four-legged companion. All fitness levels welcome!</p>
                     <p><strong>📍 Bear Mountain, NY</strong></p>
                     <button class="cta-btn" onclick="rsvpEvent('hiking')">RSVP Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venues Section -->
+    <section id="venues" class="venues">
+        <div class="container">
+            <h2>Available Venues for Booking</h2>
+            <p class="section-subtitle">Book pet-friendly venues for your own meetups and events</p>
+            <div class="venues-grid">
+                <div class="venue-card">
+                    <div class="venue-image">🏞️</div>
+                    <h3>Riverside Dog Park</h3>
+                    <p>Spacious outdoor area with fenced sections for small and large dogs. Perfect for training sessions and social meetups.</p>
+                    <div class="venue-details">
+                        <p><strong>📍 Brooklyn, NY</strong></p>
+                        <p><strong>💰 $150/hour</strong></p>
+                        <p><strong>👥 Up to 30 pets</strong></p>
+                    </div>
+                    <button class="cta-btn" onclick="openVenueBookingModal('riverside-park')">Book Venue</button>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-image">🏢</div>
+                    <h3>Community Center Hall</h3>
+                    <p>Indoor space with air conditioning, perfect for workshops, training classes, and all-weather events.</p>
+                    <div class="venue-details">
+                        <p><strong>📍 Manhattan, NY</strong></p>
+                        <p><strong>💰 $200/hour</strong></p>
+                        <p><strong>👥 Up to 50 pets</strong></p>
+                    </div>
+                    <button class="cta-btn" onclick="openVenueBookingModal('community-hall')">Book Venue</button>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-image">🌳</div>
+                    <h3>Central Park Pavilion</h3>
+                    <p>Covered outdoor space with beautiful park views. Great for birthday parties and special celebrations.</p>
+                    <div class="venue-details">
+                        <p><strong>📍 Central Park, NYC</strong></p>
+                        <p><strong>💰 $300/hour</strong></p>
+                        <p><strong>👥 Up to 40 pets</strong></p>
+                    </div>
+                    <button class="cta-btn" onclick="openVenueBookingModal('central-pavilion')">Book Venue</button>
                 </div>
             </div>
         </div>
@@ -513,6 +659,70 @@
         </div>
     </div>
 
+    <!-- Venue Booking Modal -->
+    <div id="venueBookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeVenueBookingModal()">&times;</span>
+            <h3>Book Venue</h3>
+            <div id="venue-info" class="venue-info"></div>
+            <form onsubmit="submitVenueBooking(event)">
+                <div class="form-group">
+                    <label for="booking-name">Your Name</label>
+                    <input type="text" id="booking-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-email">Email</label>
+                    <input type="email" id="booking-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-phone">Phone Number</label>
+                    <input type="tel" id="booking-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-date">Event Date</label>
+                    <input type="date" id="booking-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-time">Event Time</label>
+                    <input type="time" id="booking-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-duration">Duration (hours)</label>
+                    <select id="booking-duration" required>
+                        <option value="">Select duration</option>
+                        <option value="1">1 hour</option>
+                        <option value="2">2 hours</option>
+                        <option value="3">3 hours</option>
+                        <option value="4">4 hours</option>
+                        <option value="6">6 hours</option>
+                        <option value="8">8 hours (full day)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="booking-attendees">Expected Number of Pets</label>
+                    <input type="number" id="booking-attendees" min="1" max="50" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-event-type">Event Type</label>
+                    <select id="booking-event-type" required>
+                        <option value="">Select event type</option>
+                        <option value="training">Training Session</option>
+                        <option value="meetup">Pet Meetup</option>
+                        <option value="party">Birthday Party</option>
+                        <option value="workshop">Workshop</option>
+                        <option value="competition">Pet Competition</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="booking-requirements">Special Requirements</label>
+                    <textarea id="booking-requirements" rows="3" placeholder="Any special setup, equipment, or accessibility needs..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Booking Request</button>
+            </form>
+        </div>
+    </div>
+
     <script>
         // Smooth scrolling for navigation
         function scrollToSection(sectionId) {
@@ -579,10 +789,87 @@
 
         // Close modal when clicking outside
         window.onclick = function(event) {
-            const modal = document.getElementById('signupModal');
-            if (event.target === modal) {
-                modal.style.display = 'none';
+            const signupModal = document.getElementById('signupModal');
+            const venueModal = document.getElementById('venueBookingModal');
+            if (event.target === signupModal) {
+                signupModal.style.display = 'none';
             }
+            if (event.target === venueModal) {
+                venueModal.style.display = 'none';
+            }
+        }
+
+        // Venue booking functionality
+        const venueData = {
+            'riverside-park': {
+                name: 'Riverside Dog Park',
+                location: 'Brooklyn, NY',
+                price: '$150/hour',
+                capacity: '30 pets',
+                icon: '🏞️'
+            },
+            'community-hall': {
+                name: 'Community Center Hall',
+                location: 'Manhattan, NY',
+                price: '$200/hour',
+                capacity: '50 pets',
+                icon: '🏢'
+            },
+            'central-pavilion': {
+                name: 'Central Park Pavilion',
+                location: 'Central Park, NYC',
+                price: '$300/hour',
+                capacity: '40 pets',
+                icon: '🌳'
+            }
+        };
+
+        function openVenueBookingModal(venueId) {
+            const venue = venueData[venueId];
+            const venueInfoDiv = document.getElementById('venue-info');
+            
+            venueInfoDiv.innerHTML = `
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">${venue.icon}</div>
+                <h4>${venue.name}</h4>
+                <p>📍 ${venue.location}</p>
+                <p>👥 Up to ${venue.capacity}</p>
+                <div class="price">${venue.price}</div>
+            `;
+            
+            // Store venue ID for form submission
+            document.getElementById('venueBookingModal').setAttribute('data-venue-id', venueId);
+            document.getElementById('venueBookingModal').style.display = 'block';
+        }
+
+        function closeVenueBookingModal() {
+            document.getElementById('venueBookingModal').style.display = 'none';
+        }
+
+        function submitVenueBooking(event) {
+            event.preventDefault();
+            const venueId = document.getElementById('venueBookingModal').getAttribute('data-venue-id');
+            const venue = venueData[venueId];
+            const name = document.getElementById('booking-name').value;
+            const date = document.getElementById('booking-date').value;
+            const time = document.getElementById('booking-time').value;
+            const duration = document.getElementById('booking-duration').value;
+            const eventType = document.getElementById('booking-event-type').value;
+            
+            // Simulate API call
+            setTimeout(() => {
+                alert(`Booking request submitted successfully!
+                
+Venue: ${venue.name}
+Date: ${date}
+Time: ${time}
+Duration: ${duration} hour(s)
+Event Type: ${eventType}
+
+We'll contact you within 24 hours to confirm your booking and provide payment details.`);
+                closeVenueBookingModal();
+                // Reset form
+                event.target.reset();
+            }, 1000);
         }
 
         // Form submissions

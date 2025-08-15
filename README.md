@@ -8,16 +8,19 @@ A single-page application that showcases a pet-friendly meetup platform where pe
 📱 **Mobile-Friendly**: Fully responsive design that works on all devices
 🎯 **Interactive Elements**: Smooth scrolling, hover effects, and modal dialogs
 🗓️ **Event Showcase**: Display upcoming pet meetups and activities
+🏠 **Venue Booking**: Book pet-friendly venues for your own events and meetups
 📧 **Contact Forms**: User signup and contact functionality with form validation
 ✨ **Visual Effects**: Particle animations and floating icon effects
 
 ## Sections
 
 - **Hero Section**: Eye-catching introduction with call-to-action buttons
-- **Features**: Six key features highlighting platform benefits
+- **Features**: Seven key features highlighting platform benefits including venue booking
 - **Events**: Upcoming meetup events with RSVP functionality
+- **Venues**: Available pet-friendly venues for booking with detailed information
 - **Contact**: Contact form for user inquiries
 - **Signup Modal**: User registration form
+- **Venue Booking Modal**: Comprehensive venue booking form
 
 ## Technologies Used
 
@@ -41,8 +44,9 @@ A single-page application that showcases a pet-friendly meetup platform where pe
 
 ## Key Interactive Features
 
-- **Smooth Navigation**: Click navigation links for smooth scrolling
+- **Smooth Navigation**: Click navigation links for smooth scrolling to sections including venues
 - **Event RSVP**: Click "RSVP Now" on events for confirmation messages
+- **Venue Booking**: Click "Book Venue" to open detailed booking modal with form
 - **User Signup**: Click "Join Now" to open the registration modal
 - **Contact Form**: Submit contact information with validation
 - **Responsive Menu**: Mobile-friendly navigation
@@ -68,12 +72,14 @@ The single-file design makes it easy to customize:
 
 ## Future Enhancements
 
-- Add backend API integration for real event data
+- Add backend API integration for real event and venue data
 - Implement user authentication and profiles
-- Add map integration for event locations
+- Add map integration for event and venue locations
 - Include image galleries and user uploads
-- Add calendar integration
+- Add calendar integration for venue availability
 - Implement real-time messaging
+- Add payment processing for venue bookings
+- Implement venue availability checking and scheduling conflicts
 
 ---
 
